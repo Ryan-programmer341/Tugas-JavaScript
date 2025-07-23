@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Nama dan Sekolah</title>
+</head>
+<body>
+    <input type="text" id="Inputnama" placeholder="nama" onclick="IsiNama()"><br><br>
+    <input type="text" id="InputSekolah" placeholder="Sekolah" onclick="IsiSekolah()"><br><br>
+
+    <select id="PilihWarna" onchange="UbahWarna()">
+        <option value="black">hitam</option>
+        <option value="green">hijau</option>
+        <option value="blue">biru</option>
+        <option value="yellow">kuning</option>
+        <option value="red">merah</option>
+    </select><br><br>
+
+        <button type="button" onclick="Tampilkan()">BUTTON</button> 
+
+    <div id="hasil">
+        nama saya adalah, <div id="nama"></div>,<br>
+        sekolah saya di, <div id="sekolah"></div>,
+    </div>
+
+    <script>
+        function IsiNama() {
+            nama = document.getElementById("Inputnama").value;
+        }
+
+        function IsiSekolah() {
+            sekolah = document.getElementById("InputSekolah").value;
+        }
+        function UbahWarna() {
+            const PilihWarna = document.getElementById("PilihWarna").value;
+            document.getElementById("hasil").style.color = warna;
+        }
+
+        function Tampilkan () {
+            IsiNama(); 
+            IsiSekolah();
+
+            if (nama === "" || sekolah === "") {
+                alert("Nama dan Sekolah harus diisi!");
+                return;
+            }
+
+            document.getElementById("nama").innerText = nama;
+            document.getElementById("sekolah").innerText = sekolah;
+        }
+    </script>
+</body>
+</html>
