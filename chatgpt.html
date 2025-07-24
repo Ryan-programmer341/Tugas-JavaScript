@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Nama Sekolah</title>
+</head>
+<body>
+  <input type="text" id="inputNama" placeholder="Nama" onclick="isiNama()"><br><br>
+  <input type="text" id="inputSekolah" placeholder="Sekolah" onclick="isiSekolah()"><br><br>
+
+  <select id="warna" onchange="gantiWarna()">
+    <option value="">Pilih Warna</option>
+    <option value="black">Hitam</option>
+    <option value="green">Hijau</option>
+    <option value="blue">Biru</option>
+    <option value="yellow">Kuning</option>
+    <option value="red">Merah</option>
+  </select><br><br>
+
+  <button onclick="tampilkan()">Button</button>
+
+  <div id="hasil">
+    Namaku adalah, <div id="nama"></div>,<br>
+    Saya sekolah di <div id="sekolah"></div>
+  </div>
+
+  <script>
+    let nama = "", sekolah = "";
+
+    function isiNama() {
+      nama = document.getElementById("inputNama").value;
+    }
+
+    function isiSekolah() {
+      sekolah = document.getElementById("inputSekolah").value;
+    }
+
+    function gantiWarna() {
+      const warna = document.getElementById("warna").value;
+      document.getElementById("hasil").style.color = warna;
+    }
+
+    function tampilkan() {
+      isiNama(); // ambil nilai terbaru
+      isiSekolah();
+
+      if (nama === "" || sekolah === "") {
+        alert("Nama dan Sekolah harus diisi!");
+        return;
+      }
+
+      document.getElementById("nama").innerText = nama;
+      document.getElementById("sekolah").innerText = sekolah;
+    }
+
+    // Ubah ke <h1> saat disorot (pakai JS jika style kurang)
+    document.getElementById("hasil").addEventListener("mouseover", function() {
+      this.style.fontSize = "2em";
+    });
+    document.getElementById("hasil").addEventListener("mouseout", function() {
+      this.style.fontSize = "1em";
+    });
+  </script>
+</body>
+</html>
