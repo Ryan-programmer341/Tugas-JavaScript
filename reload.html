@@ -41,7 +41,7 @@
         function Tampilkan() {
             var nama = document.getElementById("Inputnama").value;
             var sekolah = document.getElementById("InputSekolah").value;
-            
+
             if (nama === "" || sekolah === "") {
                 alert("Nama dan Sekolah belum diisi!");
                 return;
@@ -50,11 +50,12 @@
                 document.getElementById("nama").innerText = nama;
                 document.getElementById("sekolah").innerText = sekolah;
 
-            }
+        }
 
-            
+        
             document.getElementById("hasil") .addEventListener("mouseover", function() {
             this.style.fontSize = "20px";
+
         });
         document.getElementById("hasil") .addEventListener("mouseout", function() {
             this.style.fontSize = "10px";
