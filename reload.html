@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Nama dan Sekolah</title>
+    <title>Document</title>
 </head>
 <body>
     <input type="text" id="Inputnama" placeholder="nama" onclick="IsiNama()"><br><br>
-    <input type="text" id="InputSekolah" placeholder="Sekolah" onclick="IsiSekolah()"><br><br>
+    <input type="text" id="InputSekolah" placeholder="sekolah" onclick="IsiSekolah()"><br><br>
 
     <select id="pilihwarna" onchange="UbahWarna()">
         <option value="black">hitam</option>
@@ -17,7 +17,7 @@
         <option value="red">merah</option>
     </select><br><br>
 
-        <button type="button" onclick="Tampilkan()">BUTTON</button> 
+    <button type="button" onclick="Tampilkan()">ENTER</button>
 
     <div id="hasil">
         nama saya adalah, <div id="nama"></div>,<br>
@@ -25,38 +25,41 @@
     </div>
 
     <script>
-        function IsiNama() {
-            nama = document.getElementById("Inputnama").value;
+        function IsiNama(){
+           nama = document.getEelementById("Inputnama").value;
         }
 
-        function IsiSekolah() {
+        function IsiSekolah(){
             sekolah = document.getElementById("InputSekolah").value;
         }
-        function UbahWarna() {
-            const PilihWarna = document.getElementById("pilihwarna").value;
-            document.getElementById("hasil").style.color = PilihWarna;
+
+        function UbahWarna(){
+           const PilihWarna = document.getElementById("pilihwarna") .value;
+           document.getElementById("hasil").style.color = PilihWarna;
         }
 
-        function Tampilkan () {
-            IsiNama(); 
-            IsiSekolah();
-
+        function Tampilkan() {
+            var nama = document.getElementById("Inputnama").value;
+            var sekolah = document.getElementById("InputSekolah").value;
+            
             if (nama === "" || sekolah === "") {
-                alert("Nama dan Sekolah harus diisi!");
+                alert("Nama dan Sekolah belum diisi!");
                 return;
             }
 
-            document.getElementById("nama").innerText = nama;
-            document.getElementById("sekolah").innerText = sekolah;
-        }
+                document.getElementById("nama").innerText = nama;
+                document.getElementById("sekolah").innerText = sekolah;
 
+            }
+
+            
             document.getElementById("hasil") .addEventListener("mouseover", function() {
             this.style.fontSize = "20px";
         });
         document.getElementById("hasil") .addEventListener("mouseout", function() {
             this.style.fontSize = "10px";
         })
-
     </script>
+
 </body>
 </html>
