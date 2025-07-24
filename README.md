@@ -1,3 +1,3 @@
 # Tugas-JavaScript
 
-reload.html
+https://github.com/Ryan-programmer341/Tugas-JavaScript.git
