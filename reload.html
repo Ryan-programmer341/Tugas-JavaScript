@@ -42,8 +42,14 @@
             var nama = document.getElementById("Inputnama").value;
             var sekolah = document.getElementById("InputSekolah").value;
 
-            if (nama === "" || sekolah === "") {
+            if (nama === "" && sekolah === "") {
                 alert("Nama dan Sekolah belum diisi!");
+                return;
+            } else if (nama === "") {
+                alert("nama belum diisi!");
+                return;
+            }else if (sekolah === "") {
+                alert("sekolah belum diisi!")
                 return;
             }
 
