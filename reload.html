@@ -6,11 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1a>FORM BIODATA</h1>
-    <input type="text" id="Inputnama" placeholder="nama" onclick="IsiNama()"><br><br>
-    <input type="text" id="InputSekolah" placeholder="sekolah" onclick="IsiSekolah()"><br><br>
+    <h1>FORM BIODATA</h1>
+    <input type="text" id="inputNama" placeholder="nama" onclick="inputNama()"><br><br>
+    <input type="text" id="inputSekolah" placeholder="sekolah" onclick="inputSekolah()"><br><br>
+    <input type="text" id="inputMain" placeholder="main" onclick="inputMain()"><br><br>
 
-    <select id="pilihwarna" onchange="UbahWarna()">
+    <select id="pilihWarna" onchange="ubahWarna()">
         <option value="black">hitam</option>
         <option value="green">hijau</option>
         <option value="blue">biru</option>
@@ -18,7 +19,7 @@
         <option value="red">merah</option>
     </select><br><br>
 
-    <button type="button" onclick="Tampilkan()">ENTER</button>
+    <button type="button" onclick="tampilkan()">ENTER</button>
 
     <div id="hasil">
         nama saya adalah, <div id="nama"></div>,<br>
@@ -26,22 +27,24 @@
     </div>
 
     <script>
-        function IsiNama(){
-           nama = document.getEelementById("Inputnama").value;
+        function inputNama(){
+           nama = document.getEelementById("inputNama").value;
         }
 
-        function IsiSekolah(){
-            sekolah = document.getElementById("InputSekolah").value;
+        function inputSekolah(){
+            sekolah = document.getElementById("inputSekolah").value;
         }
 
-        function UbahWarna(){
-           const PilihWarna = document.getElementById("pilihwarna") .value;
-           document.getElementById("hasil").style.color = PilihWarna;
+        function ubahWarna(){
+           const pilihWarna = document.getElementById("pilihWarna") .value;
+           document.getElementById("hasil").style.color = pilihWarna;
         }
 
-        function Tampilkan() {
-            var nama = document.getElementById("Inputnama").value;
-            var sekolah = document.getElementById("InputSekolah").value;
+        function tampilkan() {
+            var nama = document.getElementById("inputNama").value;
+            var sekolah = document.getElementById("inputSekolah").value;
+            var main = document.getElementById("inputMain").value;
+
 
             if (nama === "" && sekolah === "") {
                 alert("Nama dan Sekolah belum diisi!");
@@ -49,23 +52,28 @@
             } else if (nama === "") {
                 alert(" form nama belum diisi!");
                 return;
-            }else if (sekolah === "") {
+            } else if (sekolah === "") {
                 alert(" form sekolah belum diisi!")
                 return;
             }
 
-                document.getElementById("nama").innerText = nama;
-                document.getElementById("sekolah").innerText = sekolah;
+            document.getElementById("nama").innerText = nama;
+            document.getElementById("sekolah").innerText = sekolah;
+            document.getElementById("inputMain").value = nama + " " + sekolah  ;
 
         }
 
-            document.getElementById("hasil") .addEventListener("mouseover", function() {
+        document.getElementById("hasil") .addEventListener("mouseover", function() {
             this.style.fontSize = "20px";
 
         });
+
         document.getElementById("hasil") .addEventListener("mouseout", function() {
             this.style.fontSize = "10px";
+
         })
+
+
     </script>
 
 </body>
